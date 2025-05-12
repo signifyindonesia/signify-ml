@@ -10,10 +10,7 @@
 
 ### 📊 **2. Training dan Validation Accuracy**
 
-* Akurasi training dan validasi **naik tajam** dan mencapai:
-
-  * > 98% di sekitar epoch ke-10.
-  * Hampir **99% di akhir** pelatihan.
+* Akurasi training dan validasi **naik tajam** dan mencapai **96%**.
 * Kurva validasi sangat stabil dan **tinggi secara konsisten**.
 
 ✅ **Interpretasi:** Model sangat akurat dan tidak mengalami masalah seperti underfitting atau overfitting.
