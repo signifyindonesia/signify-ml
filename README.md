@@ -1,6 +1,6 @@
 ## Signify: SIBI Detection with Deep Learning & MediaPipe
 
-Signify adalah proyek *Capstone* berbasis Machine Learning yang bertujuan untuk mendeteksi dan mengenali bahasa isyarat SIBI (Sistem Isyarat Bahasa Indonesia) huruf A sampai Z menggunakan webcam secara real-time. Sistem ini mengombinasikan model Transfer Learning berbasis CNN (seperti EfficientNet/MobileNet) dengan ekstraksi pose tangan dari MediaPipe. Dataset dapat diakses di [Kaggle - SIBI Sign Language Dataset](https://www.kaggle.com/dataset-url](https://www.kaggle.com/datasets/alvinbintang/sibi-dataset)). 
+Signify adalah proyek *Capstone* berbasis Machine Learning yang bertujuan untuk mendeteksi dan mengenali bahasa isyarat SIBI (Sistem Isyarat Bahasa Indonesia) huruf A sampai Z menggunakan webcam secara real-time. Sistem ini mengombinasikan model Transfer Learning berbasis CNN (seperti EfficientNet/MobileNet) dengan ekstraksi pose tangan dari MediaPipe. Dataset dapat diakses di [Kaggle - SIBI Sign Language Dataset](https://www.kaggle.com/dataset-url](https://www.kaggle.com/datasets/alvinbintang/sibi-dataset). 
 
 <br>
 
