@@ -1,19 +1,83 @@
-# signify-ml
-## Proses Modelling Masih Mencari Model Terbaik
-📌  **Hasil Modelling 4 Model**
+## Signify: SIBI Detection with Deep Learning & MediaPipe
 
-1. Hasil Model 1 :
+Signify adalah proyek *Capstone* berbasis Machine Learning yang bertujuan untuk mendeteksi dan mengenali bahasa isyarat SIBI (Sistem Isyarat Bahasa Indonesia) huruf A sampai Z menggunakan webcam secara real-time. Sistem ini mengombinasikan model Transfer Learning berbasis CNN (seperti EfficientNet/MobileNet) dengan ekstraksi pose tangan dari MediaPipe.
 
-![Image](https://github.com/user-attachments/assets/9d26d3ed-f588-4802-bfb6-f8c3130c9197)
+<br>
 
-2. Hasil Model 2 :
+### 📌 Fitur Utama
 
-![Image](https://github.com/user-attachments/assets/16ae1f6b-e15c-42ef-8b12-d331237c0453)
+* 🔤 Mendeteksi abjad A–Z dari gestur tangan satu per satu
+* 🎥 Inference real-time menggunakan OpenCV + MediaPipe
+* 🧠 Model akurasi tinggi (hingga 96% validasi) menggunakan arsitektur CNN
+* 📦 Modularisasi pipeline: `hand_detector.py`, `inference.py`, dan model terpisah
+* 🖼️ Mendukung integrasi dengan webcam secara langsung
 
-3. Hasil Model 3 :
+---
 
-![Image](https://github.com/user-attachments/assets/ede11f36-e949-4164-aab8-662d8dc59c4b)
+## 🧠 Arsitektur Model
 
-4. Hasil Model 4 :
-   
-![Image](https://github.com/user-attachments/assets/05276014-f88d-4bb4-aaf7-f6e0938f2760)
+Model deep learning yang digunakan berupa varian dari:
+
+* ✅ **EfficientNetB0** (ringan, akurat, dan cepat)
+* ✅ **MobileNetV2** (baseline awal)
+
+Model dilatih dengan dataset hasil augmentasi dari gambar tangan melakukan pose A-Z, dengan input image 224x224 piksel dan output klasifikasi 26 kelas (A-Z).
+
+---
+
+## 🔧 Instalasi
+
+1. **Buat dan aktifkan virtual environment (opsional):**
+
+```bash
+python -m venv venv
+source venv/bin/activate  # atau venv\Scripts\activate di Windows
+```
+
+3. **Install dependensi:**
+
+```bash
+pip install -r signify_ml_requirements.txt
+```
+
+---
+
+## 🚀 Cara Menjalankan
+
+1. Pastikan webcam aktif
+2. Jalankan skrip inference:
+
+```bash
+python inference.py
+```
+
+3. Tunjukkan gestur tangan huruf A-Z ke kamera. Model akan memprediksi huruf dan menampilkannya di layar.
+
+---
+
+## 📊 Hasil & Evaluasi
+
+* **Akurasi Validasi:** 96%
+* **Ukuran input model:** 224x224 piksel
+* **Arsitektur:** EfficientNetB0 (pretrained ImageNet)
+* **Evaluasi:** Confusion Matrix & Real-Time Inference
+
+---
+
+## 🧪 Teknologi yang Digunakan
+
+| Teknologi          | Keterangan                          |
+| ------------------ | ----------------------------------- |
+| TensorFlow / Keras | Model CNN dan training              |
+| MediaPipe          | Deteksi tangan dan landmark         |
+| OpenCV             | Akses webcam dan tampilan real-time |
+| Python             | Bahasa pemrograman utama            |
+
+---
+
+### 📌 Catatan Tambahan
+
+* Model hanya mendeteksi satu gestur huruf dalam satu waktu.
+* Untuk gestur dua tangan atau kata, pengembangan lanjutan dibutuhkan.
+
+---
