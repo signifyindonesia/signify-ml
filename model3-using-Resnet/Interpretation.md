@@ -13,6 +13,7 @@
 
 * Akurasi training dan validasi **naik tajam** dan mencapai **97%**.
 * Kurva validasi sangat stabil dan **tinggi secara konsisten**.
+
 ![Image](https://github.com/user-attachments/assets/00fd2c06-4f3e-4913-9800-4263d48f30e9)
 
 ✅ **Interpretasi:** Model sangat akurat dan tidak mengalami masalah seperti underfitting atau overfitting.
