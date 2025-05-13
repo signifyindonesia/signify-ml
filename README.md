@@ -78,8 +78,10 @@ python inference.py
 | Python             | Bahasa pemrograman utama            |
 
 ### ResNet
-* **Akurasi Validasi:**
-* 
+* **Akurasi Validasi :**97%
+* **Ukuran input model:**224x224 piksel
+* **Arsitektur:**ResNet50 (pretrained ImageNet)
+* **Evaluasi:** Confusion Matrix & Real-Time Inference
 ---
 
 ## 📌 Catatan Tambahan
