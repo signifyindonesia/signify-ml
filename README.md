@@ -20,6 +20,7 @@ Model deep learning yang digunakan berupa varian dari:
 
 * ✅ **EfficientNetB0** (ringan, akurat, dan cepat)
 * ✅ **MobileNetV2** (baseline awal)
+* ✅ **ResNet** (akurat, berat)
 
 Model dilatih dengan dataset hasil augmentasi dari gambar tangan melakukan pose A-Z, dengan input image 224x224 piksel dan output klasifikasi 26 kelas (A-Z).
 
@@ -57,14 +58,17 @@ python inference.py
 
 ## 📊 Hasil & Evaluasi
 
+### MobileNet
+* **Akurasi Validasi:**
+* 
+
+### EfficientNet
 * **Akurasi Validasi:** 96%
 * **Ukuran input model:** 224x224 piksel
 * **Arsitektur:** EfficientNetB0 (pretrained ImageNet)
 * **Evaluasi:** Confusion Matrix & Real-Time Inference
 
----
-
-## 🧪 Teknologi yang Digunakan
+#### 🧪 Teknologi yang Digunakan pada EfficientNet
 
 | Teknologi          | Keterangan                          |
 | ------------------ | ----------------------------------- |
@@ -73,9 +77,12 @@ python inference.py
 | OpenCV             | Akses webcam dan tampilan real-time |
 | Python             | Bahasa pemrograman utama            |
 
+### ResNet
+* **Akurasi Validasi:**
+* 
 ---
 
-### 📌 Catatan Tambahan
+## 📌 Catatan Tambahan
 
 * Model hanya mendeteksi satu gestur huruf dalam satu waktu.
 * Untuk gestur dua tangan atau kata, pengembangan lanjutan dibutuhkan.
