@@ -1,0 +1,11 @@
+# Core libraries
+numpy>=1.19.0
+opencv-python>=4.5.0
+tensorflow>=2.4.0
+matplotlib>=3.3.0
+
+# Optional - for better GPU support
+# tensorflow-gpu>=2.4.0
+
+# Utilities
+argparse>=1.4.0
