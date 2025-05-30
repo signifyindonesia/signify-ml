@@ -1,6 +1,9 @@
 # utils/video_inference.py
+
 import cv2
 import numpy as np
+import tempfile
+from fastapi import UploadFile, HTTPException
 from tensorflow.keras.models import load_model
 
 MAX_FRAMES = 20
@@ -8,8 +11,14 @@ FRAME_HEIGHT = 160
 FRAME_WIDTH = 160
 CLASS_NAMES = ['J', 'Z']
 
+# Cache model
+model_dynamic = None
+
 def load_dynamic_model():
-    return load_model("model/3dcnn_efficient.h5")
+    global model_dynamic
+    if model_dynamic is None:
+        model_dynamic = load_model("model/3dcnn_efficient.h5")
+    return model_dynamic
 
 def preprocess_video(file_path):
     cap = cv2.VideoCapture(file_path)
@@ -51,3 +60,23 @@ def predict_video(file_path, model):
     confidence = preds[class_id]
     return f"{CLASS_NAMES[class_id]} ({confidence*100:.1f}%)", confidence, CLASS_NAMES[class_id]
 
+# Fungsi tambahan: untuk FastAPI endpoint
+async def predict_from_video_file(file: UploadFile):
+    try:
+        # Simpan sementara file video untuk dibaca dengan OpenCV
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".mp4") as tmp:
+            contents = await file.read()
+            tmp.write(contents)
+            tmp_path = tmp.name
+
+        model = load_dynamic_model()
+        label, confidence, class_label = predict_video(tmp_path, model)
+
+        return {
+            "prediction": label,
+            "confidence": float(confidence),
+            "class": class_label
+        }
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Prediction error: {e}")
