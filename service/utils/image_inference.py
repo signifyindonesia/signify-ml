@@ -9,7 +9,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.efficientnet import preprocess_input
 from utils.hand_detector import HandDetector
 
-# Load model, labels, and detector sekali saja
+# Load model, labels, and detector
 model_static, labels_static, detector_static = None, None, None
 
 def load_static_model():
